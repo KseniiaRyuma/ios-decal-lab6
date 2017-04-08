@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "1A8CF012E6CEED87DA59CD8CC07EE8DC142AF4E7",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "1A8CF012E6CEED87DA59CD8CC07EE8DC142AF4E7" : 9223372036854775807,
+    "D07563CBA3368644A9F8774AC8537375A3C840AB" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D1295EBE-FEF4-439E-B9A3-C11FA7736A8C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "1A8CF012E6CEED87DA59CD8CC07EE8DC142AF4E7" : "ios-decal-lab6\/",
+    "D07563CBA3368644A9F8774AC8537375A3C840AB" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Login",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Login.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/KseniiaRyuma\/ios-decal-lab6.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1A8CF012E6CEED87DA59CD8CC07EE8DC142AF4E7"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:KseniiaRyuma\/Angular_ToDoList.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D07563CBA3368644A9F8774AC8537375A3C840AB"
+    }
+  ]
+}

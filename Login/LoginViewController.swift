@@ -19,6 +19,20 @@ class LoginViewController: UIViewController {
 
     // TODO: instantiate the views needed for your project
     
+    var loginLabel: UILabel = {
+        
+        //create a label to be returned by the closure
+        let label = UILabel()
+        
+        //configure the label
+        label.text = "LOGIN"
+        label.textColor = UIColor.white
+        
+        
+        
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Constants.backgroundColor
