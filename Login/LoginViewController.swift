@@ -12,15 +12,15 @@ class LoginViewController: UIViewController {
     
     var width90: CGFloat = 0.0
     var viewhight: CGFloat = 0.0
-
+    
     
     // Constants used in the LoginViewController
     struct Constants {
-//        static let backgroundColor: UIColor = UIColor(hue: 0.5389, saturation: 1, brightness: 0.92, alpha: 1.0)
-
+        //        static let backgroundColor: UIColor = UIColor(hue: 0.5389, saturation: 1, brightness: 0.92, alpha: 1.0)
         
-
-
+        
+        
+        
         static let invalidEmailTitle = "Invalid username or password"
         static let invalidEmailMessage = "Please try again"
         
@@ -37,7 +37,7 @@ class LoginViewController: UIViewController {
         
         
     }
-
+    
     // TODO: instantiate the views needed for your project
     
     var loginLabel: UILabel = {
@@ -68,7 +68,7 @@ class LoginViewController: UIViewController {
         
         var placeholder = NSAttributedString(string: "berkeley.edu account name", attributes: [NSForegroundColorAttributeName : UIColor(white: 0.6, alpha: 0.5)])
         textField.attributedPlaceholder=placeholder
-
+        
         return textField
     }()
     
@@ -140,7 +140,7 @@ class LoginViewController: UIViewController {
         setupEmailTextConstrains()
         setupPassTextConstrains()
         setupContinueConstrains()
-
+        
     }
     
     // TODO: create an IBAction for your login button
@@ -233,7 +233,7 @@ class LoginViewController: UIViewController {
         let topConstraint = NSLayoutConstraint(item: buttonContinue, attribute: .top, relatedBy: .equal, toItem: passwordText, attribute: .top, multiplier: 1, constant: 50)
         
         view.addConstraints([horizontalConstraint, topConstraint])
-
+        
     }
     
     @IBAction func loginButton(sender: UIButton) {
@@ -245,7 +245,7 @@ class LoginViewController: UIViewController {
     // Model class to handle checking if username/password combinations are valid.
     // Usernames and passwords can be found in the Lab6Names.csv file
     let loginModel = LoginModel(filename: "Lab6Names")
-
+    
     /// Imageview for login success image (do not need to modify)
     let loginSuccessView = UIImageView(image: UIImage(named: "oski"))
     
@@ -267,7 +267,7 @@ class LoginViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
             
-        // If username / password combination is valid, display success image
+            // If username / password combination is valid, display success image
         else {
             if !loginSuccessView.isDescendant(of: view) {
                 view.addSubview(loginSuccessView)
