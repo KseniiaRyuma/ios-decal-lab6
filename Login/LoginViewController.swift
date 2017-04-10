@@ -16,7 +16,11 @@ class LoginViewController: UIViewController {
     
     // Constants used in the LoginViewController
     struct Constants {
-        static let backgroundColor: UIColor = UIColor(hue: 0.5389, saturation: 1, brightness: 0.92, alpha: 1.0)
+//        static let backgroundColor: UIColor = UIColor(hue: 0.5389, saturation: 1, brightness: 0.92, alpha: 1.0)
+
+        
+
+
         static let invalidEmailTitle = "Invalid username or password"
         static let invalidEmailMessage = "Please try again"
         
@@ -29,7 +33,6 @@ class LoginViewController: UIViewController {
         
         // secondView
         static let secondViewMargin: CGFloat = 130
-        static let secondViewW: CGFloat = 250
         static let secondViewH: CGFloat = 200
         
         
@@ -86,17 +89,35 @@ class LoginViewController: UIViewController {
     }()
     
     var buttonContinue: UIButton = {
-        let but = UIButton()
-        but.backgroundColor = UIColor(hue: 0.5389, saturation: 1, brightness: 0.92, alpha: 1.0)
-        but.layer.cornerRadius = 10
-        but.setTitle("Continue",for: .normal)
-        return but
+        let button = UIButton()
+        let borderAlpha : CGFloat = 0.7
+        
+        button.frame = CGRect(x: 100, y: 100, width: 200, height: 40)
+        button.setTitle("Get Started", for: UIControlState.normal)
+        button.setTitleColor(UIColor.black, for: UIControlState.normal)
+        button.backgroundColor = UIColor.clear
+        button.layer.borderWidth = 2.0
+        button.layer.borderColor = UIColor.black.cgColor
+        button.layer.opacity = 0.5
+        button.layer.cornerRadius = 10
+        
+        
+        
+        return button
     }()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = Constants.backgroundColor
+        
+        // setup background
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "3")?.draw(in: self.view.bounds)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        self.view.backgroundColor = UIColor(patternImage: image)
+        
+        
         width90 = view.frame.size.width * 0.9
         viewhight = view.frame.height
         print(viewhight)
@@ -164,7 +185,7 @@ class LoginViewController: UIViewController {
         emailText.translatesAutoresizingMaskIntoConstraints = false
         
         let widthConstraint = NSLayoutConstraint(item: emailText, attribute: .width, relatedBy: .equal,
-                                                 toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: Constants.secondViewW - 10)
+                                                 toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: width90 - 30)
         
         let heightConstraint = NSLayoutConstraint(item: emailText, attribute: .height, relatedBy: .equal,
                                                   toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 30)
@@ -173,7 +194,7 @@ class LoginViewController: UIViewController {
         
         let horizontalConstraint = NSLayoutConstraint(item: emailText, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0)
         
-        let topConstraint = NSLayoutConstraint(item: emailText, attribute: .top, relatedBy: .equal, toItem: secondView, attribute: .top, multiplier: 1, constant: 20)
+        let topConstraint = NSLayoutConstraint(item: emailText, attribute: .top, relatedBy: .equal, toItem: secondView, attribute: .top, multiplier: 1, constant: 50)
         
         view.addConstraints([horizontalConstraint, topConstraint])
     }
@@ -182,7 +203,7 @@ class LoginViewController: UIViewController {
         passwordText.translatesAutoresizingMaskIntoConstraints = false
         
         let widthConstraint = NSLayoutConstraint(item: passwordText, attribute: .width, relatedBy: .equal,
-                                                 toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: Constants.secondViewW - 10)
+                                                 toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: width90 - 30)
         
         let heightConstraint = NSLayoutConstraint(item: passwordText, attribute: .height, relatedBy: .equal,
                                                   toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 30)
@@ -200,7 +221,7 @@ class LoginViewController: UIViewController {
         buttonContinue.translatesAutoresizingMaskIntoConstraints = false
         
         let widthConstraint = NSLayoutConstraint(item: buttonContinue, attribute: .width, relatedBy: .equal,
-                                                 toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: Constants.secondViewW - 40)
+                                                 toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: width90 - 60)
         
         let heightConstraint = NSLayoutConstraint(item: buttonContinue, attribute: .height, relatedBy: .equal,
                                                   toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 40)
@@ -209,11 +230,9 @@ class LoginViewController: UIViewController {
         
         let horizontalConstraint = NSLayoutConstraint(item: buttonContinue, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0)
         
-//        let topConstraint = NSLayoutConstraint(item: buttonContinue, attribute: .top, relatedBy: .equal, toItem: passwordText, attribute: .top, multiplier: 1, constant: 70)
+        let topConstraint = NSLayoutConstraint(item: buttonContinue, attribute: .top, relatedBy: .equal, toItem: passwordText, attribute: .top, multiplier: 1, constant: 50)
         
-        let verticalConstraint = NSLayoutConstraint(item: buttonContinue, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: passwordText, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: 60)
-        
-        view.addConstraints([horizontalConstraint, verticalConstraint])
+        view.addConstraints([horizontalConstraint, topConstraint])
 
     }
     
